@@ -6,7 +6,8 @@ const processData = (data) => {
       tempMax: formatTempKToC(data.main.temp_min),
       tempCurrent: formatTempKToC(data.main.temp),
       tempFeelsLike: formatTempKToC(data.main.feels_like),
-      description: data.weather[0].description
+      description: data.weather[0].description,
+      iconURL: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
   }
 }
 

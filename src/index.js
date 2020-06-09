@@ -13,7 +13,6 @@ class Form extends React.Component {
       valid: true,
     };
     this.state = {...this.initialState};
-
     this.handleChange = this.handleChange.bind(this);
     this.submitData = this.submitData.bind(this);
   }
@@ -22,7 +21,6 @@ class Form extends React.Component {
     if (!this.state.valid) {
       this.setState({valid: true})
     }
-
     this.setState({city: e.target.value})
   }
 
@@ -73,7 +71,8 @@ const Display = (props) => {
     tempFeelsLike,
     tempMax,
     tempMin,
-    description
+    description,
+    iconURL
   } = props.data;
 
   if(!city) {
@@ -82,12 +81,13 @@ const Display = (props) => {
 
   return (
     <div id='statsDisplay'>
-      <p>City: {city}</p>
+      <p>{city}</p>
+      <img src={iconURL} alt='weather icon'></img>
+      <p className='city'>{description}</p>
       <p>Temperature: {tempCurrent}</p>
       <p>Feels like: {tempFeelsLike}</p>
       <p>Max: {tempMax}</p>
       <p>Min: {tempMin}</p>
-      <p>{description}</p>
     </div>
   )
 }
