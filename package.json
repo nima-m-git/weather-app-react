@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "weather-app-react",
+=======
+  "name": "weather_app",
+>>>>>>> 87bf9a6f246f45ad854c9be6d084b4856a90ffba
   "version": "0.1.0",
   "private": true,
   "dependencies": {
