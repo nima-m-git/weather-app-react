@@ -78,6 +78,32 @@ class Form extends React.Component {
   }
 }
 
+const Display = (props) => {
+  const {
+    city,
+    tempCurrent,
+    tempFeelsLike,
+    tempMax,
+    tempMin,
+    description
+  } = props.data;
+
+  if(!city) {
+    return null
+  }
+
+  return (
+    <div id='statsDisplay'>
+      <p>City: {city}</p>
+      <p>Temperature: {tempCurrent}</p>
+      <p>Feels like: {tempFeelsLike}</p>
+      <p>Max: {tempMax}</p>
+      <p>Min: {tempMin}</p>
+      <p>{description}</p>
+    </div>
+  )
+}
+
 
 class Weather extends React.Component {
   constructor(props) {
@@ -102,7 +128,7 @@ class Weather extends React.Component {
     return (
       <div>
         <h1>Weather App</h1>
-        {/* <Display /> */}
+        <Display data={this.state}/>
         <Form setData={this.setData}/>
       </div>
     );
