@@ -114,7 +114,7 @@ class Weather extends React.Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='app container'>
         <h1>Weather App</h1>
         <Display data={this.state}/>
         <Form setData={this.setData}/>
@@ -126,7 +126,9 @@ class Weather extends React.Component {
 
 ReactDOM.render(
   <React.StrictMode>
-    <Weather />
+    <div className='body container'>
+      <Weather />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );
