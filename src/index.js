@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import getProperties from './weather-fetch'
+import getProperties from './weather-fetch';
 
 
 class Form extends React.Component {
@@ -114,7 +114,7 @@ class Weather extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <h1>Weather App</h1>
         <Display data={this.state}/>
         <Form setData={this.setData}/>
