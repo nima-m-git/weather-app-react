@@ -33,7 +33,7 @@ p {
 }
 
 input[type=submit] {
-  height: 25px;
+  height: 100%;
   color: white;
   font-weight: 800;
   margin-left: 5px;
@@ -49,6 +49,21 @@ input[type=submit]:hover {
 
 input[type=submit]:active {
   transform: scale(0.95);
+}
+
+input[type=text] {
+  background: rgba(255, 255, 255, 0.308);
+  border: none;
+  border-radius: 5px;
+  padding: 4px 10px;
+  color: white;
+  font-size: inherit;
+  max-width: 60%;
+  margin-left: 5px;
+}
+
+input:invalid {
+  box-shadow: none;
 }
 
 .weather-graphic {
