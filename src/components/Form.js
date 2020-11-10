@@ -31,7 +31,7 @@ class Form extends React.Component {
         console.log({err, })
         this.setState({valid: false})
       }
-      this.setState({...this.initialState});
+      this.setState({city: this.initialState.city});
     }
   
     render() {
