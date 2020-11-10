@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { weatherGifs } from './weatherGifs';
+
 const Display = (props) => {
     const {
       city,
@@ -8,23 +10,28 @@ const Display = (props) => {
       tempMax,
       tempMin,
       description,
+      mainDescription,
       iconURL
     } = props.data;
   
-    if(!city) {
-      return null
-    }
   
     return (
-      <div id='statsDisplay'>
-        <h2>{city}</h2>
-        <img src={iconURL} alt='weather icon'></img>
-        <p className='city'>{description}</p>
-        <p>Temperature: {tempCurrent}</p>
-        <p>Feels like: {tempFeelsLike}</p>
-        <p>Max: {tempMax}</p>
-        <p>Min: {tempMin}</p>
-      </div>
+        <div>
+            {city && 
+                <div id='statsDisplay'>
+                <h2>{city}</h2>
+                <div className='weather-graphic' style={{'backgroundImage': `url(${weatherGifs[mainDescription]})`}}>
+                    <img src={iconURL} style={{opacity: 1}} alt='weather icon'></img>
+                </div>
+                <p>{description}</p>
+                <p>Temperature: {tempCurrent}</p>
+                <p>Feels like: {tempFeelsLike}</p>
+                <p>Max: {tempMax}</p>
+                <p>Min: {tempMin}</p>
+                </div>
+            }
+        </div>
+
     )
   }
 

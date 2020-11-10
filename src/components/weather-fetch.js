@@ -2,10 +2,11 @@ const weatherURL = (city) => `https://api.openweathermap.org/data/2.5/weather?q=
 
 const processData = (data) => {
   return {
-      tempMin: formatTempKToC(data.main.temp_max),
-      tempMax: formatTempKToC(data.main.temp_min),
+      tempMin: formatTempKToC(data.main.temp_min),
+      tempMax: formatTempKToC(data.main.temp_max),
       tempCurrent: formatTempKToC(data.main.temp),
       tempFeelsLike: formatTempKToC(data.main.feels_like),
+      mainDescription: data.weather[0].main,
       description: data.weather[0].description,
       iconURL: `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
   }

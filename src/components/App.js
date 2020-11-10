@@ -13,7 +13,8 @@ class App extends React.Component {
         tempFeelsLike: '',
         tempMax: '',
         tempMin: '',
-        description: ''
+        description: '',
+        mainDescription: '',
       }
       this.state = {...this.initialState};
       this.setData = this.setData.bind(this);
