@@ -17,7 +17,7 @@ const Display = (props) => {
   
     return (
       <div id='statsDisplay'>
-        <p>{city}</p>
+        <h2>{city}</h2>
         <img src={iconURL} alt='weather icon'></img>
         <p className='city'>{description}</p>
         <p>Temperature: {tempCurrent}</p>

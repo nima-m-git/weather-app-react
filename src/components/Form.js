@@ -11,7 +11,7 @@ class Form extends React.Component {
       };
       this.state = {...this.initialState};
       this.handleChange = this.handleChange.bind(this);
-      this.submitData = this.submitData.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
   
     handleChange(e) {
@@ -21,7 +21,8 @@ class Form extends React.Component {
       this.setState({city: e.target.value})
     }
   
-    submitData = async () => {
+    handleSubmit = async (e) => {
+      e.preventDefault()
       try {
         const properties = await getProperties(this.state.city);
         const city = this.state.city;
@@ -35,7 +36,7 @@ class Form extends React.Component {
   
     render() {
       return (
-        <form id='cityForm'>
+        <form onSubmit={this.handleSubmit}>
           <label>
             City: 
             <input 
@@ -44,20 +45,15 @@ class Form extends React.Component {
               onChange={this.handleChange}
               value={this.state.city}
               required
-            >
-            </input>
-            <input 
-              type='button' 
-              value='Submit' 
-              onClick={this.submitData}
-              >
-              </input>
+            />
+            </label>
+            <input type='submit' value='Check'/>
               {this.state.valid === false && 
                 <div id='invalidCity'>
                   Invalid Request
                 </div>
               }
-          </label>
+
         </form>
       )
     }

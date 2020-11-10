@@ -11,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(rgb(6, 238, 255), rgb(91, 156, 61)) no-repeat;
   color: rgb(255, 255, 255);
+  text-transform: capitalize;
 }
 
 code {
@@ -34,5 +35,9 @@ code {
 
 p {
   font-size: 18px;
-  text-transform: capitalize;
+}
+
+input[type=submit] {
+  height: 100%;
+  color: red;
 }
